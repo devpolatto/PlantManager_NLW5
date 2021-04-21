@@ -10,6 +10,7 @@ import {
     Platform,
     Keyboard,
 } from "react-native";
+import { useNavigation } from "@react-navigation/core";
 
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
@@ -17,6 +18,8 @@ import fonts from "../styles/fonts";
 import Button from '../components/Button';
 
 const UserIdentification = () => {
+
+    const navigation = useNavigation();
 
     const [isFocused, setIsFocused] = useState(false)
     const [isFilled, setIsFilled] = useState(false)
@@ -34,6 +37,11 @@ const UserIdentification = () => {
     function handleInputChange(value: string) {
         setIsFilled(!!value);
         setName(value);
+    }
+
+    function handleSubmit() {
+        navigation.navigate('Confirmation')
+        console.log('click')
     }
 
     return (
@@ -62,7 +70,7 @@ const UserIdentification = () => {
                                 onChangeText={handleInputChange}
                             />
                             <View style={styles.footer}>
-                                <Button />
+                                <Button title="Confirmar" onPress={handleSubmit} />
                             </View>
                         </View>
                     </View>

@@ -6,7 +6,7 @@ import {
   Jost_600SemiBold
 } from '@expo-google-fonts/jost';
 
-import WelcomeScreen from './src/pages/Welcome';
+import Routes from './src/routes/';
 
 export default function App() {
 
@@ -18,6 +18,6 @@ export default function App() {
   if (!fonstLoaded) return <AppLoading />
 
   return (
-    <WelcomeScreen />
+    <Routes />
   );
 }

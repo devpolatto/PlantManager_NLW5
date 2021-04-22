@@ -44,7 +44,14 @@ const UserIdentification = () => {
     async function handleSubmit() {
         if (!name) return Alert.alert('Me diz como chamar você 😐')
 
-        await AsyncStorage.setItem('@plantmanager:user', name)
+        try {
+            await AsyncStorage.setItem('@plantmanager:user', name)
+
+        } catch (error) {
+            console.log(error)
+
+        }
+
         navigation.navigate('Confirmation')
     }
 

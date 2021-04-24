@@ -46,13 +46,20 @@ const UserIdentification = () => {
 
         try {
             await AsyncStorage.setItem('@plantmanager:user', name)
+            navigation.navigate('Confirmation', {
+                title: 'Prontinho',
+                subtitle: 'Agora vamos começar a cuidar das suas plantinhas com muito cuidado',
+                buttonTitle: 'Começar',
+                icon: 'smile',
+                nextScreen: 'PlantSelect'
+            })
 
         } catch (error) {
             console.log(error)
+            Alert.alert('Não foi possivel salvar o nome do usuario 😐')
 
         }
 
-        navigation.navigate('Confirmation')
     }
 
     return (

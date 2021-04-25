@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { StyleSheet, View, Image, Text, FlatList, Alert } from "react-native";
 import { formatDistance } from "date-fns/esm";
 import pt from "date-fns/esm/locale/pt/index.js";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import waterdrop from "../assets/waterdrop.png";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
-import { loadPlant, PlantProps } from "../libs/storage";
+import { loadPlant, PlantProps, removePlant } from "../libs/storage";
 
 import { Header } from "../components/Header";
 import { PlantCardSecondary } from '../components/PlantCardSecondary';
@@ -19,6 +20,29 @@ export function MyPlants() {
     const [myPlants, setMyPlants] = useState<PlantProps[]>([]);
     const [loading, setLoading] = useState(true);
     const [nextWatered, setNextWatered] = useState<String>()
+
+    function handleRemove(plant: PlantProps) {
+        Alert.alert('Remove', `Deseja Remover a ${plant.name}?`, [
+            {
+                text: 'não 🙌',
+                style: 'cancel'
+            },
+            {
+                text: 'sim 😓',
+                onPress: async () => {
+                    try {
+                        await removePlant(plant.id)
+                        setMyPlants((oldData) => (
+                            oldData.filter((item) => item.id != plant.id)
+                        ))
+
+                    } catch (error) {
+                        Alert.alert('Não foi possivel remover')
+                    }
+                }
+            }
+        ])
+    }
 
     useEffect(() => {
         async function loadStorageData() {
@@ -61,6 +85,7 @@ export function MyPlants() {
                     renderItem={({ item }) => (
                         <PlantCardSecondary
                             data={item}
+                            handleRemove={() => handleRemove(item)}
                         />
                     )}
                     showsVerticalScrollIndicator={false}

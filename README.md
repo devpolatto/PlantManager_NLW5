@@ -18,19 +18,19 @@ PlantManager is an application developed in order to help people who have plants
 
 <p align="center">
   <a href="https://expo.io/" style="margin-right: 20px">
-    <img style="height: 90px" alt="react native" title="react native" src=".github/expo.png">
+    <img style="height: 90px; max-width: none;" alt="react native" title="react native" src=".github/expo.png">
   </a>
   <a href="https://reactnative.dev/" style="margin-right: 20px">
-    <img style="height: 100px" alt="react native" title="react native" src=".github/icons8-react-native.svg">
+    <img style="height: 100px; max-width: none;" alt="react native" title="react native" src=".github/icons8-react-native.svg">
   </a>
   <a href="https://www.typescriptlang.org/">
-    <img style="height: 100px" alt="react native" title="react native" src=".github/icons8-typescript.svg">
+    <img style="height: 100px; max-width: none;" alt="react native" title="react native" src=".github/icons8-typescript.svg">
   </a>
 </p>
 
 ---
 
-## 🚀 Getting started
+## Getting started
 
 Clone the project and access the folder
 

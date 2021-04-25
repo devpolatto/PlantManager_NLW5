@@ -11,8 +11,9 @@ export interface PlantProps {
     frequency: {
         times: number;
         repeat_every: string;
-    },
-    dateTimeNotification: Date
+    };
+    dateTimeNotification: Date;
+    hour: string
 }
 
 interface StoragePlantProps {

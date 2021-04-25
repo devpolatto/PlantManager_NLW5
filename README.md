@@ -7,19 +7,17 @@ This is a project developed during Next Level Week # 5, presented by @Rocketseat
 PlantManager is an application developed in order to help people who have plants at home to remember to water them.
 </p> </br>
 
-
 <p align="center">
   <img alt="Moveit" src=".github/plantmanager-preview.png">
-</p>
+</p> </br>
 
 ---
 
 ## Technologies
 
+This project was built using the [Expo](https://expo.io/) platform together with the following technologies:
+
 <p align="center">
-  <a href="https://expo.io/" style="margin-right: 20px">
-    <img style="height: 90px; max-width: none;" alt="react native" title="react native" src=".github/expo.png">
-  </a>
   <a href="https://reactnative.dev/" style="margin-right: 20px">
     <img style="height: 100px; max-width: none;" alt="react native" title="react native" src=".github/icons8-react-native.svg">
   </a>
@@ -27,6 +25,7 @@ PlantManager is an application developed in order to help people who have plants
     <img style="height: 100px; max-width: none;" alt="react native" title="react native" src=".github/icons8-typescript.svg">
   </a>
 </p>
+
 
 ---
 

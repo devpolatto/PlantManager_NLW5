@@ -34,7 +34,8 @@ export function MyPlants() {
 
             setNextWatered(`Regue sua ${plantsStoraged[0].name} daqui a ${nextTime}`);
             setMyPlants(plantsStoraged);
-            setLoading(false);
+
+            setTimeout(() => setLoading(false), 1000)
         }
 
         loadStorageData();

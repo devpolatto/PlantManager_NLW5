@@ -48,15 +48,23 @@ export function MyPlants() {
         async function loadStorageData() {
             const plantsStoraged = await loadPlant();
 
-            const nextTime = formatDistance(
-                new Date(plantsStoraged[0].dateTimeNotification).getTime(),
-                new Date().getTime(),
-                {
-                    locale: pt,
-                }
-            );
+            if (plantsStoraged.length < 1) {
+                setNextWatered('Você ainda não possui plantas registradas');
+                setLoading(false);
+                return
+            } else {
+                const nextTime = formatDistance(
+                    new Date(plantsStoraged[0].dateTimeNotification).getTime(),
+                    new Date().getTime(),
+                    {
+                        locale: pt,
+                    }
+                );
+                setNextWatered(`Regue sua ${plantsStoraged[0].name} daqui a ${nextTime}`);
+            }
 
-            setNextWatered(`Regue sua ${plantsStoraged[0].name} daqui a ${nextTime}`);
+
+
             setMyPlants(plantsStoraged);
 
             setTimeout(() => setLoading(false), 1000)

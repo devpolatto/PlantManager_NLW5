@@ -85,7 +85,7 @@ export function PlantSave() {
                     <SvgFromUri uri={plant.photo} height={150} width={150} />
 
                     <Text style={styles.plantName}>
-                        Nome da Planta
+                        {plant.name}
                     </Text>
                     <Text style={styles.plantAbout}>
                         {plant.about}

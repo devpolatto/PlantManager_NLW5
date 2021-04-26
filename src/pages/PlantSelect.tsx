@@ -118,7 +118,7 @@ export function PlantSelect() {
                         <EnvironmentButton
                             title={item.title}
                             active={item.key === environmentSelected}
-                        //onPress={() => handleEnvironmentSelected(item.key)}
+                            onPress={() => handleEnvironmentSelected(item.key)}
                         />
                     )}
                     horizontal
